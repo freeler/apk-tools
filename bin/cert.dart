@@ -23,5 +23,5 @@ void main(List<String> args) async {
 }
 
 void printHelpInfo() {
-  print('\ncert [apk file],打印APK签名信息\n');
+  print('\n命令格式: cert [apk file]               打印APK签名信息\n');
 }
