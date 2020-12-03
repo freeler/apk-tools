@@ -54,7 +54,11 @@ class ConfigCmd extends BaseCmd {
       return;
     }
 
-    ///打印配置信息
+    if (argResults.arguments.isEmpty) {
+      printUsage();
+      return;
+    }
+
     if (getBool('verbose')) {
       printConfigs();
       return;
@@ -79,5 +83,6 @@ class ConfigCmd extends BaseCmd {
     Configs.read().forEach((key, value) {
       print('$key=$value');
     });
+    print('\n');
   }
 }
