@@ -37,6 +37,6 @@ class CertCmd extends BaseCmd {
   }
 
   void printHelpInfo() {
-    print('\ncert [apk file],打印APK签名信息\n');
+    print('\n命令格式：apk printcert [apk file]              打印APK签名信息\n');
   }
 }
