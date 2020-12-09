@@ -11,7 +11,8 @@ void main(List<String> arguments) {
   runner.addCommand(CertCmd());
   runner.addCommand(ConfigCmd());
 
-  if (arguments.isNotEmpty && !commands.contains(arguments[0])) {
+  final arg = arguments.first;
+  if (arg != null && arg.isNotEmpty && !commands.contains(arg)) {
     apkRunner.run(arguments);
   } else {
     runner.run(arguments);

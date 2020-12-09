@@ -45,11 +45,15 @@ class ApkRunner {
   }
 
   void run(List<String> arguments) {
+    final args = argParser.parse(arguments);
+    if (args.getBool('help')) {
+      print(argParser.usage);
+      return;
+    }
+
     //读配置
     final configs = Configs.read();
     if (configs.isEmpty) return;
-
-    final args = argParser.parse(arguments);
 
     ///参数
     final isRelease = args.getBool('release');
