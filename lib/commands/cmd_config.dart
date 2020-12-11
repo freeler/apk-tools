@@ -8,7 +8,7 @@ class ConfigCmd extends BaseCmd {
   String get name => 'config';
 
   @override
-  String get description => 'config environment';
+  String get description => 'local server config';
 
   @override
   void buildArgs(ArgParser argParser) {
