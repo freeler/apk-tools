@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:apk/commands/cmd_base.dart';
 import 'package:apk/global.dart';
+import 'package:apk/tools/pgyer.dart';
 import 'package:args/src/arg_parser.dart';
 import 'package:path/path.dart' as path;
 
 import 'tools/configs.dart';
-import 'tools/web.dart';
 
 class ApkRunner {
   final ArgParser argParser;
@@ -64,7 +64,7 @@ class ApkRunner {
     //原生项目打包
     if (isNativeProject(project)) {
       buildNativeApk(project, isRelease, flavor).then(
-        (apk) => Web.publish(apk, msg),
+        (apk) => Pgyer.upload(apk, msg),
       );
       return;
     }
@@ -72,7 +72,7 @@ class ApkRunner {
     //Flutter项目打包
     if (isFlutterProject(project)) {
       buildFlutterApk(project, isRelease, flavor).then(
-        (apk) => Web.publish(apk, msg),
+        (apk) => Pgyer.upload(apk, msg),
       );
       return;
     }

@@ -1,5 +1,8 @@
 import 'dart:io';
 
+///
+///本地服务器配置
+///
 class Configs {
   ///
   ///配置文件
