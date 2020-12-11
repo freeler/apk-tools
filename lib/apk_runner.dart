@@ -15,12 +15,14 @@ class ApkRunner {
     //release apk
     argParser.addFlag(
       'release',
+      abbr: 'r',
       negatable: false,
       help: 'Build a release version of your app.',
     );
     //debug apk 默认
     argParser.addFlag(
       'debug',
+      abbr: 'd',
       negatable: false,
       help: 'Build a debug version of your app (default mode).',
     );
