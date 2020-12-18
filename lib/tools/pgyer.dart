@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:path/path.dart' as path;
 
-import 'configs.dart';
 import 'ding.dart';
 
 ///
@@ -50,8 +49,8 @@ class Pgyer {
   ///发送钉钉机器人消息
   ///
   static void post(Map map, String apkName, String msg) {
-    final configs = Configs.read();
-    final token = configs['token'];
+    final token =
+        '2c8e6419bed999f41de4720d3d7c4af2aacd8cab9983adf78f956c6fc407bd11';
     final qrcode = map['appQRCodeURL'] as String;
     final shortUrl = map['appShortcutUrl'] as String;
     final apkUrl = 'https://www.pgyer.com/$shortUrl';

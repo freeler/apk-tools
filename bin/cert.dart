@@ -1,4 +1,5 @@
 import 'package:apk/global.dart';
+import 'package:shell/shell.dart';
 
 ///
 /// 打印APK签名信息
@@ -14,7 +15,9 @@ void main(List<String> args) async {
     return;
   }
 
-  final result = await shell('./', 'keytool -list -printcert -jarfile ${file}');
+  final shell = Shell();
+  final result = await shell.startAndReadAsString(
+      'keytool', ['-list', '-printcert', '-jarfile', file]);
   print(result);
   final startIndex = result.indexOf('MD5:') + 6;
   final endIndex = startIndex + 48;
